@@ -1,0 +1,6 @@
+pyautogui
+pillow
+termcolor
+pyinstaller
+pynput
+
