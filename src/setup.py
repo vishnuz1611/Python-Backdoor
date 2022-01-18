@@ -1,4 +1,4 @@
-
+import os
 # Setting up the Host IP and Port for the payload and server
 
 host_ip = input('[+] Enter the Host IP: ')
